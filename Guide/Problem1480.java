@@ -2,7 +2,7 @@ package Guide;
 
 import java.util.Arrays;
 
-public class RunningSum {
+public class Problem1480 {
 
     public static void main(String[] args) {
         int[] source = { 3, 1, 2, 10, 1 };
