@@ -2,6 +2,9 @@ package Guide;
 
 import java.util.Arrays;
 
+/**
+ * Fibonaci
+ */
 public class Problem1480 {
 
     public static void main(String[] args) {
