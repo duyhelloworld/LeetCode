@@ -15,20 +15,31 @@ Explanation:
 Since the list has two middle nodes with values 3 and 4,
 we return the second one.
  */
-public class Problem876 {
-    class Node {
-        int value;
-        Node next;
-        int length(Node node){
-            int len = 0;
-            Node tmp = node;
-            while (true) {
-                if (node == null) {
-                    return 0;
-                }
-                tmp = node.next;
+class Node {
+    int value;
+    Node next;
+
+    public Node(int value){
+        this.value = value;
+    }
+    
+    int length(Node node) {
+        int len = 0;
+        Node tmp = node;
+        while (true) {
+            if (tmp.next == null) {
+                return len;
             }
+            len++;
+            tmp = node.next;
         }
+    }
+}
+public class Problem876 {
+
+    public static void main(String[] args) {
+        Node node = new Node(10);
+        node.length(node);
     }
 
 }
