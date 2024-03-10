@@ -1,5 +1,3 @@
-package Guide;
-
 /**
  * Richest Customer Wealth : 
  * give a m x n integer grid account where acc[i][j] 

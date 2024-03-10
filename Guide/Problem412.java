@@ -1,5 +1,3 @@
-package Guide;
-
 /*
  * Fizz Buzz
  */
