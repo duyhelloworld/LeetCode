@@ -1,7 +1,7 @@
 package Day1;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Given an integer array nums, return true if any value appears at least twice
@@ -9,66 +9,26 @@ import java.util.Map;
  */
 
 public class Problem217 {
-
     public static boolean containsDuplicate(int[] nums) {
-        // int size = nums.length;
-
-        // for (int i = 0; i < size; i++) {
-        //     for (int j = i + 1; j < size; j++) {
-        //         if (nums[j] == nums[i]) {
+        // int length = nums.length;
+        // for (int i = 0; i < length; i++) {
+        //     for (int j = i+1; j < length; j++) {
+        //         if (nums[i] == nums[j]) {
         //             return true;
         //         }
         //     }
         // }
         // return false;
 
-        // Com : T(n*n), S(1)
-
-        // Arrays.sort(nums);
-        // for (int j = 0; j < nums.length; j++) {
-        //     if (nums[j] == nums[j+1]) {
-        //         return true;
-        //     }
-        // }
-        // return false;
-
-        // Com : 
-        // sort : (nlog(n) - Quicksort 2 pivot)
-        // + O(n) traverse 
-        // --> T(nlog(n)), S(log(n))  
-        
-
-        // Set<Integer> set = new HashSet<>();
-        // for (int num : nums) {
-        //     if (set.contains(num)) {
-        //         return true;
-        //     }
-        //     set.add(num);
-        // }
-        // return false;
-        
-        // Com : O(n)
-
-        Map<Integer, Integer> map = new HashMap<>();
-        for (int num : nums) {
-            // if (map.get(num) >= 2) {
-            //     return true;
-            // }
-            // map.put(num, map.getOrDefault(num, 0) + 1);
-
-            // or 
-            if (map.containsKey(num)) {
-                return true;
-            }
-            map.put(num, 1);
+        Set<Integer> set = new HashSet<>();
+        for (int i : nums) {
+            set.add(Integer.valueOf(i));
         }
-        return false;
-        
-        // Com : O(n)
+        return set.size() != nums.length;
     }
 
     public static void main(String[] args) {
-        int[] nums = { 1, 2, 3, 1 };
-        System.out.println(Problem217.containsDuplicate(nums));
+        int[] nums = { -1, 1, 2, 3, 0 };
+        System.out.println(containsDuplicate(nums));
     }
 }
